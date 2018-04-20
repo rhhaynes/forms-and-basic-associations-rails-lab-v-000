@@ -12,7 +12,6 @@ class SongsController < ApplicationController
   end
 
   def create
-    binding.pry
     params[:song][:genre_name] = Genre.find(params[:song][:genre_id]).name
     @song = Song.new(song_params)
     if !!@song.save then redirect_to @song
